@@ -20,21 +20,52 @@ export default function Index() {
   const { error, success } = useLoaderData();
 
   return (
-    <div>
-      <h1>Acorta tu URL</h1>
-      <form method="post" action="/url">
-        <input type="text" name="original" id="original" placeholder="Escribe tu url que deseas acortar"/>
-        <label>
-          {error === 'missing' && (<p className='error'>Por favor, llena todos los campos</p>)}
-          {error === 'unavailable' && (<p className='error'>Ese nombre ya está en uso</p>)}
-        </label>
-        <input type="text" name="short" id="short" placeholder="Escribe solo el nombre que deseas tener como nuevo link"/>
-        <button type="submit">Acortar</button>
-      </form>
-      {success && (<p>Tu link ha sido acortado con éxito y es{' '}
-      <a href={`/${success}`}>{`${success}`}</a>
-      </p>)}
-    </div>
-  );
+    
+		<main>
+    <form method="post" action="/url">
+      <h1>URL Shortener</h1>
+      
+      <label htmlFor="original">
+        <span>URL original</span>
+        <input
+          type="text"
+          name="original"
+          id="original"
+          placeholder="Ejemplo: google.com"
+          required
+        />
+      </label>
+      <label htmlFor="short">
+        <span>Nombre URL acortada</span>
+        <input
+          type="text"
+          name="short"
+          id="short"
+          placeholder="Ejemplo: gle"
+          required
+        />
+      </label>
+      <button type="submit">Acortar</button>
+
+      <span className="success">
+        {success && (
+          <p>
+            ¡Listo! Tu URL acortada es{' '}
+            <a href={`/${success}`}>{`https://short-.up.railway.app/${success}`}</a>
+          </p>
+        )}
+      </span>
+
+      <span className="error">
+        {error === 'missing' && (
+          <p className="error">Por favor, llena todos los campos</p>
+        )}
+        {error === 'unavailable' && (
+          <p className="error">Ese nombre ya está en uso, utiliza otro por favor</p>
+        )}
+      </span>
+    </form>
+  </main>
+);
 }
 

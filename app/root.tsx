@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -8,11 +8,19 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import global from './global.css';
+
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
   title: "New Remix App",
   viewport: "width=device-width,initial-scale=1",
 });
+
+// add global styling to remix app
+
+export const links: LinksFunction = () => {
+	return [{ rel: 'stylesheet', href: global }];
+};
 
 export default function App() {
   return (
