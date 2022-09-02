@@ -51,7 +51,7 @@ export default function Index() {
         {success && (
           <p>
             ¡Listo! Tu URL acortada es{' '}
-            <a href={`/${success}`}>{`https://short-.up.railway.app/${success}`}</a>
+            <a href={`/${success}`}>{`${success}`}</a>
           </p>
         )}
       </span>
