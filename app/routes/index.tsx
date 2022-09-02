@@ -26,31 +26,31 @@ export default function Index() {
       <h1>URL Shortener</h1>
       
       <label htmlFor="original">
-        <span>URL original</span>
+        <span>URL Original</span>
         <input
           type="text"
           name="original"
           id="original"
-          placeholder="Ejemplo: google.com"
+          placeholder="Example: google.com"
           required
         />
       </label>
       <label htmlFor="short">
-        <span>Nombre URL acortada</span>
+        <span>Shortened URL Name</span>
         <input
           type="text"
           name="short"
           id="short"
-          placeholder="Ejemplo: gle"
+          placeholder="Example: gle"
           required
         />
       </label>
-      <button type="submit">Acortar</button>
+      <button type="submit">Shorten</button>
 
       <span className="success">
         {success && (
           <p>
-            ¡Listo! Tu URL acortada es{' '}
+            Your shortened URL is{' '}
             <a href={`/${success}`}>{`${success}`}</a>
           </p>
         )}
@@ -58,10 +58,10 @@ export default function Index() {
 
       <span className="error">
         {error === 'missing' && (
-          <p className="error">Por favor, llena todos los campos</p>
+          <p className="error">Please fill in all the fields</p>
         )}
         {error === 'unavailable' && (
-          <p className="error">Ese nombre ya está en uso, utiliza otro por favor</p>
+          <p className="error">That name is already in use, use another one please</p>
         )}
       </span>
     </form>
