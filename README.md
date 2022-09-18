@@ -1,4 +1,5 @@
-# Built shorten links app. I used Typescript, Remix framework, PostgreSQL, Dockerfile, and Prisma
+# URL Shortener 🩳 
+Built shorten links app. I used Typescript, Remix framework, PostgreSQL, Dockerfile, and Prisma
 Orm for its development. The shortened URL is recorded in temporary Cache to reduce costs in
 the database for multiple uses of the same URL. <br />
 |Remix | PostgreSQL | Typescript | Dockerfile | PrismaORM | <br/> 
